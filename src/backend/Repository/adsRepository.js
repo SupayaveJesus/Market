@@ -9,7 +9,7 @@ class AdsRepository {
              c.name AS category_name,
              u.first_name || ' ' || u.last_name AS seller_name,
              JSON_AGG(
-                JSON_BUILD_OBJECT('id', i.id, 'url_img', CONCAT('/uploads/', i.url_img))
+                JSON_BUILD_OBJECT('id', i.id, 'url_img', i.url_img)
              ) AS images
       FROM ads a
       JOIN category c ON a.id_category = c.id
@@ -29,7 +29,7 @@ class AdsRepository {
       SELECT a.*, 
              c.name AS category_name,
              JSON_AGG(
-                JSON_BUILD_OBJECT('id', i.id, 'url_img', CONCAT('/uploads/', i.url_img))
+                JSON_BUILD_OBJECT('id', i.id, 'url_img', i.url_img)
              ) AS images
       FROM ads a
       JOIN category c ON a.id_category = c.id
@@ -49,7 +49,7 @@ class AdsRepository {
              c.name AS category_name,
              u.first_name || ' ' || u.last_name AS seller_name,
              JSON_AGG(
-                JSON_BUILD_OBJECT('id', i.id, 'url_img', CONCAT('/uploads/', i.url_img))
+                JSON_BUILD_OBJECT('id', i.id, 'url_img', i.url_img)
              ) AS images
       FROM ads a
       JOIN users u ON a.id_user = u.id_user
@@ -123,7 +123,7 @@ class AdsRepository {
        c.name AS category_name,
        u.first_name || ' ' || u.last_name AS seller_name,
        JSON_AGG(
-          JSON_BUILD_OBJECT('id', i.id, 'url_img', CONCAT('/uploads/', i.url_img))
+          JSON_BUILD_OBJECT('id', i.id, 'url_img', i.url_img)
        ) AS images
         FROM ads a
         JOIN category c ON a.id_category = c.id
@@ -189,7 +189,7 @@ class AdsRepository {
            c.name AS category_name,
            u.first_name || ' ' || u.last_name AS seller_name,
            JSON_AGG(
-              JSON_BUILD_OBJECT('id', i.id, 'url_img', CONCAT('/uploads/', i.url_img))
+              JSON_BUILD_OBJECT('id', i.id, 'url_img', i.url_img)
            ) AS images
     FROM ads a
     JOIN category c ON a.id_category = c.id

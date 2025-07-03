@@ -21,9 +21,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     result.ads.forEach(ad => {
-      const image = ad.image
-        ? `/uploads/${ad.image}`
-        : "../images/default.png";
+      let image = ad.image;
+      if (image) {
+        // Limpiar URLs duplicadas de forma más agresiva
+        image = image.replace(/\/uploads\/+/g, '/uploads/');
+        if (!image.startsWith('/uploads/')) {
+          image = `/uploads/${image}`;
+        }
+      } else {
+        image = "../images/default.png";
+      }
 
       const card = document.createElement("div");
       card.classList.add("anuncio-card");

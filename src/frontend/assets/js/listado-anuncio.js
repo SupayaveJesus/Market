@@ -33,9 +33,16 @@ async function cargarAnuncios() {
     }
 
     data.forEach((ad) => {
-      const img = ad.images?.[0]?.url_img
-        ? `${ad.images[0].url_img}`
-        : "../assets/images/default.png";
+      let img = ad.images?.[0]?.url_img;
+      if (img) {
+        // Limpiar URLs duplicadas de forma más agresiva
+        img = img.replace(/\/uploads\/+/g, '/uploads/');
+        if (!img.startsWith('/uploads/')) {
+          img = `/uploads/${img}`;
+        }
+      } else {
+        img = "../assets/images/default.png";
+      }
 
       const card = document.createElement("div");
       card.classList.add("anuncio-card");

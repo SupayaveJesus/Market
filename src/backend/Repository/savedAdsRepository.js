@@ -19,7 +19,7 @@ class SavedAdsRepository {
               JSON_AGG(
                 CASE 
                   WHEN i.id IS NOT NULL AND i.url_img IS NOT NULL THEN
-                  JSON_BUILD_OBJECT('id', i.id, 'url_img', CONCAT('/uploads/', i.url_img))
+                  JSON_BUILD_OBJECT('id', i.id, 'url_img', i.url_img)
                 END
               ) AS images
         FROM saved_ads sa

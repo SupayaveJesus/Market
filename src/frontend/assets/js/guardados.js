@@ -24,9 +24,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     data.data.forEach((ad) => {
-      const img = ad.images?.[0]?.url_img
-        ? `${ad.images[0].url_img}`
-        : "../images/default.png";
+      let img = ad.images?.[0]?.url_img;
+      if (img) {
+        // Limpiar URLs duplicadas de forma más agresiva
+        img = img.replace(/\/uploads\/+/g, '/uploads/');
+        if (!img.startsWith('/uploads/')) {
+          img = `/uploads/${img}`;
+        }
+      } else {
+        img = "../images/default.png";
+      }
 
       const card = document.createElement("div");
       card.classList.add("ad-card");
