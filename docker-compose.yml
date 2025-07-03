@@ -1,0 +1,60 @@
+version: '3.8'
+
+networks:
+  app-network:
+    driver: bridge
+
+services:
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=market
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - PGUSER=postgres
+      - PGPASSWORD=root
+      - PGDATABASE=market
+      - PGHOST=postgres
+      - PGPORT=5432
+      - NODE_ENV=development
+      - PORT=3000
+      - UPLOADS_PATH=uploads
+      - JWT_SECRET=jesusSecret123!
+      - API_URL=http://localhost:3000
+      - SERVER_PORT=3000
+    depends_on:
+      - postgres
+    volumes:
+      - ./src/backend/uploads:/app/uploads
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./src/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
