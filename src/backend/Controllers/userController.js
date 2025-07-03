@@ -7,7 +7,6 @@ class userController {
     
     async register(req, res) {
         await handleRequest(async (userData) => {
-            // Normalizar el campo email/mail
             if (userData.email && !userData.mail) {
                 userData.mail = userData.email;
             }

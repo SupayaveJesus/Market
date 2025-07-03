@@ -141,7 +141,6 @@ function setupEnviar(btn, adId) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "No se pudo iniciar conversación");
 
-      // Redirigir usando el ID de conversación real
       window.location.href = `conversacion.html?id=${data.data.id}`;
     } catch (err) {
       console.error("Error iniciando conversación:", err);
@@ -161,19 +160,18 @@ async function renderRelatedAds(categoryId, currentAdId) {
   console.log('categoryId:', categoryId);
   console.log('currentAdId:', currentAdId);
   
-  // Primero verificar que el contenedor existe
   const container = document.querySelector(".download-feature");
   console.log('Contenedor encontrado:', !!container);
   
   if (!container) {
-    console.error('❌ No se encontró el contenedor .download-feature');
+    console.error('No se encontró el contenedor .download-feature');
     return;
   }
   
   try {
-    console.log('🔄 Haciendo fetch a:', `/api/ads/category/${categoryId}`);
+    console.log('Haciendo fetch a:', `/api/ads/category/${categoryId}`);
     const res = await fetch(`/api/ads/category/${categoryId}`);
-    console.log('✅ Respuesta recibida, status:', res.status);
+    console.log('Respuesta recibida, status:', res.status);
     
     if (!res.ok) {
       throw new Error(`Error ${res.status}: ${res.statusText}`);
@@ -182,7 +180,6 @@ async function renderRelatedAds(categoryId, currentAdId) {
     const responseData = await res.json();
     console.log('📦 Datos recibidos:', responseData);
 
-    // Crear la estructura HTML
     container.innerHTML = `
       <div class="relacionados">
         <h3 class="subtitle">También te puede interesar:</h3>
@@ -205,11 +202,11 @@ async function renderRelatedAds(categoryId, currentAdId) {
 
     if (ads.length === 0) {
       grid.innerHTML = `<p style="grid-column: 1/-1; text-align:center; color: white;">No hay productos relacionados en esta categoría</p>`;
-      console.log('ℹ️ No hay anuncios relacionados para mostrar');
+      console.log('ℹNo hay anuncios relacionados para mostrar');
       return;
     }
 
-    console.log('🎨 Renderizando', ads.length, 'anuncios relacionados...');
+    console.log('Renderizando', ads.length, 'anuncios relacionados...');
     
     ads.forEach((ad, index) => {
       console.log(`Renderizando anuncio ${index + 1}:`, ad.title);
@@ -229,10 +226,10 @@ async function renderRelatedAds(categoryId, currentAdId) {
       grid.appendChild(el);
     });
     
-    console.log('✅ Anuncios relacionados renderizados correctamente');
+    console.log('Anuncios relacionados renderizados correctamente');
   } catch (error) {
-    console.error("❌ Error en relacionados:", error);
-    // Mostrar error en el HTML también
+    console.error("Error en relacionados:", error);
+    
     container.innerHTML = `
       <div class="relacionados">
         <h3 class="subtitle">Error al cargar productos relacionados</h3>

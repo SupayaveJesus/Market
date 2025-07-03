@@ -14,21 +14,18 @@ document.getElementById('register-form').addEventListener('submit', async (e) =>
 
     let valid = true;
 
-     // Validación de nombre
     if (!first_name) {
         document.getElementById('msg-error-first_name').textContent = 'Por favor ingrese su nombre';
         document.getElementById('msg-error-first_name').style.display = 'block';
         valid = false;
     }
 
-    // Validación de apellido
     if (!last_name) {
         document.getElementById('msg-error-last_name').textContent = 'Por favor ingrese su apellido';
         document.getElementById('msg-error-last_name').style.display = 'block';
         valid = false;
     }
 
-    // Validación de correo
     if (!mail) {
         document.getElementById('msg-error-mail').textContent = 'Por favor ingrese su correo';
         document.getElementById('msg-error-mail').style.display = 'block';
@@ -39,7 +36,6 @@ document.getElementById('register-form').addEventListener('submit', async (e) =>
         valid = false;
     }
 
-    // Validación de contraseña
     if (!password || password.length < 6) {
         document.getElementById('msg-error-password').textContent = 'La contraseña debe tener al menos 6 caracteres';
         document.getElementById('msg-error-password').style.display = 'block';

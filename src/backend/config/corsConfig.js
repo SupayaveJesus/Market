@@ -1,5 +1,5 @@
 const corsOptions = {
-    origin: true, // Permitir TODOS los orígenes en desarrollo
+    origin: true, 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'Session-id', 'X-Requested-With', 'X-Real-IP', 'X-Forwarded-For', 'X-Forwarded-Proto'],
     credentials: true,
