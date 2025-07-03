@@ -63,7 +63,7 @@ function renderAdHTML(ad) {
 
   const imageGallery = ad.images?.length
     ? ad.images.map((img) => `<img src="/uploads/${img.url_img}" alt="${ad.title}" class="img-thumbnail">`).join("")
-    : `<img src="../assets/images/default.png" alt="Sin imagen" class="img-thumbnail">`;
+    : `<img src="/assets/images/default.png" alt="Sin imagen" class="img-thumbnail">`;
 
   container.innerHTML = `
     <section class="ad-detail">
@@ -213,7 +213,7 @@ async function renderRelatedAds(categoryId, currentAdId) {
       
       const img = ad.images?.[0]?.url_img
         ? `/uploads/${ad.images[0].url_img}`
-        : "../assets/images/default.png";
+        : "/assets/images/default.png";
 
       const el = document.createElement("div");
       el.className = "ad-card";
