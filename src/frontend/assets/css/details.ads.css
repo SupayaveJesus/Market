@@ -1,0 +1,211 @@
+:root {
+  --accent-green: #2a860e;
+  --sub-title:#3caf50;
+  --dark-bg: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #ccc;
+  --white: #fff;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ad-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--dark-bg);
+}
+
+.ad-detail__image-gallery {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.img-thumbnail {
+  max-width: 180px;
+  border: 2px dashed var(--accent-green);
+  border-radius: 10px;
+}
+
+.relacionados {
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem 1rem;
+  border-radius: 15px;
+}
+
+.relacionados h3 {
+  color: var(--sub-title);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+.relacionados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.ad-card {  
+  width: 100%;
+  max-width: 250px;
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border: 2px solid var(--accent-green);
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ad-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(42, 134, 14, 0.3);
+  border-color: #4caf50;
+}
+
+.ad-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 4px dashed var(--accent-green);
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.ad-card:hover img {
+  border-color: #4caf50;
+}
+
+.ad-card-title {
+  color: var(--sub-title);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.ad-card-price {
+  color: var(--white);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.ad-card a {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--white);
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 2px solid var(--accent-green);
+}
+.ad-card a:hover {
+  background-color: transparent;
+  color: var(--accent-green);
+  transform: scale(1.05);
+}
+
+.ad-detail__info {
+  background-color: var(--card-bg);
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.ad-detail__info h2 {
+  font-size: 2rem;
+  color: var(--sub-title);
+  margin-bottom: 1rem;
+}
+
+.ad-detail__info .precio {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.ad-detail__info .descripcion,
+.ad-detail__info .vendedor {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.acciones {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem; 
+  text-align: center;
+  justify-content: center;
+}
+
+.btn-detalle {
+  background-color: transparent;
+  color: var(--white);
+  display: flex;
+  padding: 1rem;
+  border-radius: 20%;
+  border: 1px solid var(--accent-green);
+  transition: background-color 0.3s ease;
+}
+
+.btn-detalle:hover {
+  background-color: #1a5e0b;
+}
+
+.mensaje-anuncio {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+@media (width >= 768px) {
+  .ad-detail {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .ad-detail__image {
+    flex: 5;
+  }
+  
+  .ad-detail__info {
+    flex: 3;
+    margin-left: 0.5rem;
+  }
+  
+  .relacionados-grid {
+    grid-template-columns: repeat((2, 1fr));
+  }
+  
+  .ad-card {
+    max-width: 280px;
+  }
+}
+
+@media (width >= 1200px) {
+  .relacionados-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

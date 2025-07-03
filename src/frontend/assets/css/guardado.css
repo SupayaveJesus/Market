@@ -1,0 +1,108 @@
+:root {
+  --accent-green: #2a860e;
+  --danger-red: #b32d2d;
+  --danger-red-hover: #9e1c1c;
+  --dark-bg: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #ccc;
+  --white: #fff;
+  --sub-title: #3caf50;
+  --font-main: "Poppins", "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+}
+
+.guardados-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.guardados-container h2{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  color: var(--accent-green);
+  display: flex;
+}
+.anuncios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.ad-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--accent-green);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ad-card__image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 4px dashed var(--accent-green);
+}
+
+.ad-card__info h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--sub-title);
+  margin: 0.5rem 0 0.2rem;
+}
+
+.ad-card__info p {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+  line-height: 1.4;
+}
+
+.ad-card__info .vendedor {
+  color: var(--text-color);
+}
+
+.acciones-plus {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.ver-btn,
+.quitar-btn {
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: var(--font-main);
+  background-color: var(--accent-green);
+  color: var(--white);
+  transition: background-color 0.2s ease;
+}
+
+.ver-btn:hover {
+  background-color: #23900e;
+}
+
+.quitar-btn {
+  background-color: var(--danger-red);
+}
+
+.quitar-btn:hover {
+  background-color: var(--danger-red-hover);
+}
+

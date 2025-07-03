@@ -1,0 +1,212 @@
+
+.banner {
+  background-color: #1e1e1e; 
+  color: #ffffff; 
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.banner-container h2 {
+  font-size: 36px;
+  color: #2a860e; 
+}
+
+.banner-container p {
+  margin-top: 10px;
+  color: #b3b3b3; 
+}
+
+.categorias-destacadas {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #121212; 
+}
+.categorias-destacadas h2{
+  color: #2a860e;
+  font-size: 30px;
+
+}
+
+.categorias-lista {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.categoria-item {
+  background-color: #1e1e1e; 
+  padding: 20px;
+  border: 1px solid #2a860e; 
+  border-radius: 8px;
+  width: 120px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #ffffff; 
+}
+
+.categoria-item:hover {
+  background-color: #333333; 
+}
+
+.anuncios-destacados {
+  padding: 40px 20px;
+  background-color: #121212; 
+}
+.anuncios-destacados h2{
+  color: #2a860e;
+  font-size: 25px;
+  text-align:center ;
+  margin-left: 1rem;
+}
+.anuncio-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #1e1e1e;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  padding: 1rem;
+  text-align: center;
+  padding-bottom:16px;
+  margin-bottom: 1rem;
+}
+.anuncio-card:hover{
+  transform: translate(-5px, -5px);
+  box-shadow: 10px 10px 0px #000;
+}
+.anuncio-image{
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border: 4px dashed #2a860e;
+  aspect-ratio: 1/1;
+}
+.anuncio-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
+  color: #4caf50; 
+  text-decoration: none;
+}
+.anuncio-description{
+  font-size: 1.25rem;
+  color: #ccc; 
+  margin-bottom: 0.5rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
+  font-weight: 400;
+}
+.anuncio-precio{
+  font-size: 1.25rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+.anuncio-vendedor{
+  font-size: 1.25rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+.anuncio-card a.btn-detalle {
+  display: inline-block;
+  margin-top: 10px;
+  color: #4caf50;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s;
+  border: 1px solid ;
+}
+
+.anuncio-card a.btn-detalle:hover {
+  color: #388e3c;
+  text-decoration: underline;
+}
+
+.ver-todos-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn-ver-todos {
+  display: inline-block;
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ver-todos:hover {
+  background-color: #388e3c;
+  transform: translateY(-3px);
+}
+
+.faq{
+  background-color: #121212;
+  box-shadow: 0 2px 12px rgb(44, 62, 80, 0.07);
+  margin: auto;
+  padding: 32px 24px;
+}
+.faq h2{
+  text-align: center;
+  color: #2a860e;
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+.faq-lista{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.faq-item{
+  background: #1e1e1e;
+  border: 2px solid #2a860e;
+  border-radius: 8px;
+  padding: 20px 18px;
+  transition:  box-shadow 0.2s;
+}
+.faq-item h3{
+  color: #4caf50;
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+}
+.faq-item p{
+  color: #ccc;
+  font-size: 1rem;
+  margin: 0;
+  text-align: justify;
+}
+
+
+
+@media (width >= 768px){
+
+  .anuncios-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+  }
+  .fag{
+    padding: 40px 60px;
+    max-width: 1025px;
+  }
+  .faq-lista{
+    gap: 32px;
+  }
+  .faq-item{
+    padding: 28px 24px;
+  }
+}
+
+
+
+@media (min-width: 1024px) {
+  .anuncios-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

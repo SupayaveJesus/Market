@@ -1,0 +1,117 @@
+:root {
+  --accent-green: #2a860e;
+}
+
+
+body{
+    background-color: #121212;
+}
+.volver-inicio{
+    width: 90%;
+    max-width: 330px;
+    margin: 1.5rem auto 1rem auto;
+    display: flex;
+    justify-content: flex-start;
+}
+.volver-inicio a{
+    padding: 8px 16px;
+    border: 1.5px solid var(--accent-green);
+    border-radius: 20px;
+    background-color: transparent;
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-decoration: none;
+    box-shadow: 0 0 3px var(--accent-green);
+    transition: all 0.3s ease;
+    text-shadow: 0 0 1px var(--accent-green);
+}
+.volver-inicio a:hover{
+    background-color: var(--accent-green);
+    color: #121212;
+    box-shadow: 0 0 8px var(--accent-green);
+    text-shadow: none;
+}
+
+.register-container{
+    width: 90%;
+    max-width: 330px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #333333;
+    border: 2px solid var(--accent-green);
+    border-radius: 8px;
+    font-family: 'Poppins', cursive;
+}
+.register-container h1{
+    color: var(--accent-green);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Poppins', cursive;
+    text-shadow: -1px -1px 0 #fff, 1px 1px 0 var(--accent-green);
+    
+}
+.register-container form{
+    display: flex;
+    flex-direction: column;
+}
+.register-container label{
+    margin-bottom: 0.5rem;
+    color: var(--accent-green);
+    font-weight: bold;
+    font-family: Poppins, cursive;
+}
+.register-container input{
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--accent-green);
+    border-radius: 4px;
+    box-shadow: 3px 3px 0px var(--accent-green);
+    font-family: 'Poppins',sans-serif;
+}
+
+.register-container button{
+    padding: 0.75rem;
+    background-color: var(--accent-green);
+    color: #fff;
+    border: 2px solid var(--accent-green);
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Poppins', cursive;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.register-container button:hover{
+    transform: translateY(-3px);
+}
+
+.register-container p{
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'Poppins', cursive;
+}
+.register-container a{
+    color: var(--accent-green);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Poppins', cursive;
+}
+.register-container a:hover{
+    text-decoration: none;
+    color: #007acc;
+    transform: translate(-2px, -2px);
+    transition: all 0.2s ease;
+    
+}
+.msg-error{
+    color: red;
+    font-size:0.85rem ;
+    margin-top: 4px;
+    display: block;
+}
+.msg-error:empty{
+    display: none;
+}
+@media

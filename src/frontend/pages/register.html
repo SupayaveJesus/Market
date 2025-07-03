@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register-Marketplace</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/register.css">
+</head>
+
+<body>
+    <div class="volver-inicio">
+        <a href="index.html">Volver al inicio</a>
+    </div>
+    <div class="register-container">
+        <h1>Registerate</h1>
+        <form id="register-form">
+            <label for="first_name">Nombre:</label>
+            <input type="text" id="first_name" name="first_name">
+            <div class="msg-error" id="msg-error-first_name"></div>
+
+            <label for="last_name">Apellido:</label>
+            <input type="text" id="last_name" name="last_name">
+            <div class="msg-error" id="msg-error-last_name"></div>
+
+
+            <label for="mail">Correo Electrónico:</label>
+            <input type="mail" id="mail" name="mail">
+            <div class="msg-error" id="msg-error-mail"></div>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password">
+            <div class="msg-error" id="msg-error-password"></div>
+    
+
+            <button type="submit">Registrar</button>
+            <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+
+        </form>
+    </div>
+
+  <script src="../assets/js/register.js"></script>
+</body>
+
+</html>

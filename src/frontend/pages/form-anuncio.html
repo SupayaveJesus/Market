@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nuevo Anuncio - Marketplace</title>
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/form-anuncio.css" />
+  <link rel="stylesheet" href="../assets/css/header.css">
+</head>
+
+<body>
+
+  <header id="header">
+  </header>
+
+  <main class="form-container">
+    <h2 id="form-title">Nuevo Anuncio</h2>
+
+    <form id="form-anuncio" enctype="multipart/form-data">
+      <label for="title">Título</label>
+      <input id="title" name="title" />
+      <div class="msg-error" id="msg-error-title"></div>
+
+      <label for="description">Descripción</label>
+      <textarea id="description" name="description"></textarea>
+      <div class="msg-error" id="msg-error-description"></div>
+
+      <label for="price">Precio</label>
+      <input id="price" name="price" />
+      <div class="msg-error" id="msg-error-price"></div>
+
+      <label for="id_category">Categoría</label>
+      <select id="id_category" name="id_category">
+        <option value="">Selecciona una categoría</option>
+        <option value="1">Bicicletas</option>
+        <option value="2">Electronica</option>
+        <option value="3">Vehiculos</option>
+        <option value="4">Hogar</option>
+        <option value="5">Moda</option>
+
+
+      </select>
+      <div class="msg-error" id="msg-error-id_category"></div>
+
+
+      <label for="images">Imágenes</label>
+      <input type="file" id="images" name="images" multiple accept="image/*" />
+      <div class="msg-error" id="msg-error-images"></div>
+
+      <div class="msg-success" id="msg-success"></div>
+
+      <button type="submit" class="btn-guardar">Guardar Anuncio</button>
+    </form>
+  </main>
+
+  <script src="../assets/js/form-anuncio.js"></script>
+  <script src="../assets/js/crearHeader.js"></script>
+</body>
+
+</html>

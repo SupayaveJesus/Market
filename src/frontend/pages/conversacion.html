@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat - Marketplace</title>
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/chat.css" />
+</head>
+
+<body>
+  <header id="header"></header>
+
+  <div class="modo-selector">
+    <button id="modo-comprador" class="navbar-link">Mis Conversaciones</button>
+    <button id="modo-vendedor" class="navbar-link">Mis Anuncios</button>
+  </div>
+ 
+  <main class="mensajes-container">
+
+    <div class="mensajes-panel vendedor-mode" id="panel-vendedor">
+      <aside class="panel-columna">
+        <h3>Anuncios</h3>
+        <ul class="lista" id="lista-anuncios"></ul>
+      </aside>
+
+      <aside class="panel-columna">
+        <h3>Interesados</h3>
+        <ul class="lista" id="lista-interesados"></ul>
+      </aside>
+
+      <section class="chat-panel">
+        <div class="chat-header" id="chat-header">
+        </div>
+
+        <div class="chat-mensaje" id="chat-mensajes">
+        </div>
+
+        <form class="chat-input" id="form-vendedor">
+          <input type="text" id="input-vendedor" placeholder="Escribe tu mensaje..." />
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="mensajes-panel comprador-mode hidden" id="panel-comprador">
+      <aside class="panel-columna">
+        <h3>Mis Conversaciones</h3>
+        <ul class="lista" id="lista-conversaciones"></ul>
+      </aside>
+
+      <section class="chat-panel">
+        <div class="chat-header" id="chat-header-comp">
+        </div>
+
+        <div class="chat-mensaje" id="chat-mensajes-comp">
+        </div>
+
+        <form class="chat-input" id="form-comprador">
+          <input type="text" id="input-comprador" placeholder="Escribe tu mensaje..." />
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script src="../assets/js/crearHeader.js"></script>
+  <script src="../assets/js/conversation.js"></script>
+</body>
+
+</html>

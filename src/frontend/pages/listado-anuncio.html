@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listado de Anuncios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/listado-anuncios.css" />
+</head>
+
+<body>
+
+  <header id="header"></header>
+
+  <main class="listado-container">
+  <section class="categoria-titulo">
+    <h2>Categoria</h2>
+    <div class="categorias-lista">
+      <a href="listado-anuncio.html?category_id=1" class="categoria-item">Bicicletas</a>
+      <a href="listado-anuncio.html?category_id=2" class="categoria-item">Electronica</a>
+      <a href="listado-anuncio.html?category_id=3" class="categoria-item">Vehículos</a>
+      <a href="listado-anuncio.html?category_id=4" class="categoria-item">Hogar</a>
+      <a href="listado-anuncio.html?category_id=5" class="categoria-item">Moda</a>
+    </div>
+
+    <div class="ver-todos-container">
+        <a href="listado-anuncio.html" class="btn-ver-todos" id="btn-ver-todos">Ver todos los anuncios</a>
+    </div>
+  </section>
+
+  <hr class="linea-separacion">
+
+  <h2 id="titulo-pagina">Resultados</h2>
+  <div class="anuncios-grid" id="resultados-ads">
+  </div>
+</main>
+
+  <script src="../assets/js/listado-anuncio.js"></script>
+  <script src="../assets/js/crearHeader.js"></script>
+</body>
+
+</html>

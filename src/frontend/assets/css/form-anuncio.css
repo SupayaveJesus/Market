@@ -1,0 +1,121 @@
+:root {
+  --accent-green: #2a860e;
+  --accent-green-hover: #388e3c;
+  --error-red: #e74c3c;
+  --error-bg: #1c1c1c;
+  --bg-dark: #121212;
+  --bg-card: #1e1e1e;
+  --border-dark: #333;
+  --text-light: #ffffff;
+}
+
+body{
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.form-container{
+  width: 90%;
+  max-width: 100%;
+  margin: 40px auto;
+  background-color: var(--bg-card);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgb(0, 0, 0, 0.4);
+}
+
+.form-container h2{
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--accent-green);
+}
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+label{
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+input, textarea, select{
+  padding: 10px;
+  border: 1px solid var(--border-dark);
+  border-radius: 5px;
+  background-color: var(--bg-card);
+  color: var(--text-light);
+}
+
+input[type="file"]{
+  border: none;
+  background-color: transparent;
+}
+.btn-guardar{
+  background-color: var(--accent-green);
+  color: var(--text-light);
+  padding: 12px;
+  border: none;
+  font-size:1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease transform 0.2s ease;
+}
+.btn-guardar:hover{
+  background-color: var(--accent-green);
+  transform: translateY(-2px);
+}
+.msg-error{
+  color: var(--error-red);
+  font-size: 0.95rem;
+  margin-top: 4px;
+  font-weight: 500;
+  padding-left: 2px;
+  display: none;
+}
+.input-error{
+  border: 1.5px solid var(--error-red) !important;
+  background-color: var(--error-bg);
+}
+
+.msg-success{
+  background-color: transparent;
+  color: var(--accent-green);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10ppx;
+  text-align: center;
+}
+
+@media(width >= 768px){
+  .form-container{
+    max-width: 600px;
+    padding: 30px;
+    margin: 40px auto;
+  }
+}
+
+@media(width >= 1024px){
+  .form-container{
+    max-width: 750px;
+    padding: 40px 60px;
+  }
+  input, textarea, select{
+    font-size: 1rem;
+    padding: 12px;
+  }
+  label {
+    font-size: 1rem;
+  }
+
+  .btn-guardar {
+    font-size: 1.1rem;
+    padding: 14px;
+  }
+
+  .msg-error {
+    font-size: 1rem;
+  }
+}
